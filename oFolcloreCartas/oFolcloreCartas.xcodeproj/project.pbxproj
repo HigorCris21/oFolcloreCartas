@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		EB372AED2A198BF9005BE931 /* oFolcloreCartasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB372AEC2A198BF9005BE931 /* oFolcloreCartasApp.swift */; };
-		EB372AEF2A198BF9005BE931 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB372AEE2A198BF9005BE931 /* ContentView.swift */; };
+		EB372AEF2A198BF9005BE931 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB372AEE2A198BF9005BE931 /* MainView.swift */; };
 		EB372AF12A198BFA005BE931 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB372AF02A198BFA005BE931 /* Assets.xcassets */; };
 		EB372AF42A198BFA005BE931 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB372AF32A198BFA005BE931 /* Preview Assets.xcassets */; };
 		EB372AFE2A198BFA005BE931 /* oFolcloreCartasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB372AFD2A198BFA005BE931 /* oFolcloreCartasTests.swift */; };
 		EB372B082A198BFA005BE931 /* oFolcloreCartasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB372B072A198BFA005BE931 /* oFolcloreCartasUITests.swift */; };
 		EB372B0A2A198BFA005BE931 /* oFolcloreCartasUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB372B092A198BFA005BE931 /* oFolcloreCartasUITestsLaunchTests.swift */; };
+		EB372B1A2A198D80005BE931 /* CardGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB372B192A198D80005BE931 /* CardGameModel.swift */; };
+		EB372B1D2A1993E6005BE931 /* CartaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB372B1C2A1993E6005BE931 /* CartaView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,7 @@
 /* Begin PBXFileReference section */
 		EB372AE92A198BF9005BE931 /* oFolcloreCartas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = oFolcloreCartas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB372AEC2A198BF9005BE931 /* oFolcloreCartasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oFolcloreCartasApp.swift; sourceTree = "<group>"; };
-		EB372AEE2A198BF9005BE931 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EB372AEE2A198BF9005BE931 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		EB372AF02A198BFA005BE931 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB372AF32A198BFA005BE931 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EB372AF92A198BFA005BE931 /* oFolcloreCartasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = oFolcloreCartasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +46,8 @@
 		EB372B032A198BFA005BE931 /* oFolcloreCartasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = oFolcloreCartasUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB372B072A198BFA005BE931 /* oFolcloreCartasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oFolcloreCartasUITests.swift; sourceTree = "<group>"; };
 		EB372B092A198BFA005BE931 /* oFolcloreCartasUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oFolcloreCartasUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EB372B192A198D80005BE931 /* CardGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGameModel.swift; sourceTree = "<group>"; };
+		EB372B1C2A1993E6005BE931 /* CartaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartaView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,9 @@
 		EB372AE02A198BF8005BE931 = {
 			isa = PBXGroup;
 			children = (
+				EB372B182A198D70005BE931 /* ViewModel */,
+				EB372B172A198D6A005BE931 /* View */,
+				EB372B162A198D54005BE931 /* Model */,
 				EB372AEB2A198BF9005BE931 /* oFolcloreCartas */,
 				EB372AFC2A198BFA005BE931 /* oFolcloreCartasTests */,
 				EB372B062A198BFA005BE931 /* oFolcloreCartasUITests */,
@@ -95,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				EB372AEC2A198BF9005BE931 /* oFolcloreCartasApp.swift */,
-				EB372AEE2A198BF9005BE931 /* ContentView.swift */,
 				EB372AF02A198BFA005BE931 /* Assets.xcassets */,
 				EB372AF22A198BFA005BE931 /* Preview Content */,
 			);
@@ -125,6 +131,38 @@
 				EB372B092A198BFA005BE931 /* oFolcloreCartasUITestsLaunchTests.swift */,
 			);
 			path = oFolcloreCartasUITests;
+			sourceTree = "<group>";
+		};
+		EB372B162A198D54005BE931 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB372B192A198D80005BE931 /* CardGameModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EB372B172A198D6A005BE931 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EB372AEE2A198BF9005BE931 /* MainView.swift */,
+				EB372B1B2A1993CD005BE931 /* Componente */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EB372B182A198D70005BE931 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EB372B1B2A1993CD005BE931 /* Componente */ = {
+			isa = PBXGroup;
+			children = (
+				EB372B1C2A1993E6005BE931 /* CartaView.swift */,
+			);
+			path = Componente;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +295,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB372AEF2A198BF9005BE931 /* ContentView.swift in Sources */,
+				EB372B1D2A1993E6005BE931 /* CartaView.swift in Sources */,
+				EB372B1A2A198D80005BE931 /* CardGameModel.swift in Sources */,
+				EB372AEF2A198BF9005BE931 /* MainView.swift in Sources */,
 				EB372AED2A198BF9005BE931 /* oFolcloreCartasApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,8 +463,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -432,6 +472,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = HC.oFolcloreCartas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -452,8 +495,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -461,6 +504,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = HC.oFolcloreCartas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

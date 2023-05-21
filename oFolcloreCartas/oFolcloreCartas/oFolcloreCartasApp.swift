@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct oFolcloreCartasApp: App {
+    
+    //Inicializa o aplicativo Horizontal
+    init() {
+        UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
+    }
+    
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
