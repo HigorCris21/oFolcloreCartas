@@ -1,53 +1,94 @@
 import SwiftUI
 
 struct MainView: View {
+    @State private var jogador1: Jogador = Jogador()
+    @State private var jogador2: Jogador = Jogador()
+    
+    @State private var cartaSelecionadaJogador1: Carta?
+    @State private var cartaSelecionadaJogador2: Carta?
+    
+    @StateObject private var jogoViewModel = JogoViewModel()
+    
     var body: some View {
         VStack {
             LazyVGrid(columns: gridLayout, spacing: 10) {
                 ForEach(jogadores[0].cartas) { carta in
-                    CardView(carta: carta)
+                    CartaAcimaView(cartaSelecionada: $cartaSelecionadaJogador1, carta: carta)
+                        .position(x: UIScreen.main.bounds.width * 0.10, y: UIScreen.main.bounds.height * 0.15)
                 }
             }
             
-            LazyVGrid(columns: gridLayout, spacing: 10) {
-                ForEach(jogadores[1].cartas) { carta in
-                    CardView(carta: carta)
+            HStack {
+                Spacer()
+                
+                VStack (alignment: .leading) {
+                    Text("VIDA - \(jogador1.vida)")
+                        .font(.title)
+                        .foregroundColor(.black)
+                    
+                    
+                    Spacer()
+                    
+                    Text("MANA - \(jogador1.mana)")
+                        .font(.title)
+                        .foregroundColor(.black)
                 }
             }
+            
+            Spacer()
+            Spacer()
+            
+            LazyVGrid(columns: gridLayout, spacing: 10) {
+                ForEach(jogadores[1].cartas) { carta in
+                    CartaAbaixoView(cartaSelecionada: $cartaSelecionadaJogador2, carta: carta)
+                        .position(x: UIScreen.main.bounds.width * 0.10, y: UIScreen.main.bounds.height * 0.15)
+                }
+            }
+            
+            HStack {
+                Spacer()
+                VStack (alignment: .leading) {
+                    Text("VIDA - \(jogador1.vida)")
+                        .font(.title)
+                        .foregroundColor(.black)
+                    
+                    Spacer()
+                    
+                    Text("MANA- \(jogador2.mana)")
+                        .font(.title)
+                        .foregroundColor(.black)
+                    
+                    
+                }
+            }
+            Spacer()
         }
+        .background(
+            Image("background")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
+        )
+        
+        
+        
+
+        
     }
+    
     
     let gridLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
-}
-
-struct CardView: View {
-   
-    @State private var exibirImagem: Bool = true
-    var carta: Carta
     
-    var body: some View {
-        VStack {
-            if exibirImagem {
-                Image(uiImage: carta.imagem ?? UIImage())
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 100, height: 100)
-            } else {
-                Image("Carta")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 100, height: 100)
-            }
-        }
-        .onTapGesture {
-            exibirImagem.toggle()
-        }
-    }
-
+    
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
     }
 }
+
+
+

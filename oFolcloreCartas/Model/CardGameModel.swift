@@ -6,26 +6,37 @@
 //
 
 import Foundation
-import UIKit
+import SwiftUI
 
 
 struct Jogador: Identifiable {
     var id = UUID()
     var cartas: [Carta]
-    var mana = [Int].self
+    var mana: Int = 1
+    var vida: Int = 3
     
+    
+    //Distribui as cartas e verifica se existe as  3 cartas são somente Ataque ou somente Recarga
     init() {
         self.cartas = Baralho().baralho.prefix(3).map { $0 }
+        
+        let possuiApenasAtaques = cartas.allSatisfy { $0.tipo == "Ataque" }
+        let possuiApenasRecargas = cartas.allSatisfy { $0.tipo == "Recarga" }
+        
+        if possuiApenasAtaques || possuiApenasRecargas {
+            self.cartas = Baralho().baralho.prefix(3).map { $0 }
+        }
     }
 }
+
 
 var jogadores: [Jogador] = [Jogador(), Jogador()]
 
 
 struct Carta: Identifiable {
     var id = UUID()
-    var imagem: UIImage?
-    var acao: String
+    var imagem: Image?
+    var tipo: String
     
 }
 
@@ -39,22 +50,22 @@ struct Baralho {
 
 
 var baralhoData = [
-    Carta(imagem: UIImage(named: "Ataque"), acao: "Ataque"),
-    Carta(imagem: UIImage(named: "Defesa"), acao: "Defesa"),
-    Carta(imagem: UIImage(named: "Recarga"), acao: "Recarga"),
-    Carta(imagem: UIImage(named: "Ataque"), acao: "Ataque"),
-    Carta(imagem: UIImage(named: "Defesa"), acao: "Defesa"),
-    Carta(imagem: UIImage(named: "Recarga"), acao: "Recarga"),
-    Carta(imagem: UIImage(named: "Ataque"), acao: "Ataque"),
-    Carta(imagem: UIImage(named: "Defesa"), acao: "Defesa"),
-    Carta(imagem: UIImage(named: "Recarga"), acao: "Recarga"),
-    Carta(imagem: UIImage(named: "Ataque"), acao: "Ataque"),
-    Carta(imagem: UIImage(named: "Defesa"), acao: "Defesa"),
-    Carta(imagem: UIImage(named: "Recarga"), acao: "Recarga"),
-    Carta(imagem: UIImage(named: "Ataque"), acao: "Ataque"),
-    Carta(imagem: UIImage(named: "Recarga"), acao: "Recarga"),
-    Carta(imagem: UIImage(named: "Ataque"), acao: "Ataque"),
-    Carta(imagem: UIImage(named: "Recarga"), acao: "Recarga")
+    Carta(imagem: Image("Ataque"), tipo: "Ataque"),
+    Carta(imagem: Image("Defesa"), tipo: "Defesa"),
+    Carta(imagem: Image("Recarga"), tipo: "Recarga"),
+    Carta(imagem: Image("Ataque"), tipo: "Ataque"),
+    Carta(imagem: Image("Defesa"), tipo: "Defesa"),
+    Carta(imagem: Image("Recarga"), tipo: "Recarga"),
+    Carta(imagem: Image("Ataque"), tipo: "Ataque"),
+    Carta(imagem: Image("Defesa"), tipo: "Defesa"),
+    Carta(imagem: Image("Recarga"), tipo: "Recarga"),
+    Carta(imagem: Image("Ataque"), tipo: "Ataque"),
+    Carta(imagem: Image("Defesa"), tipo: "Defesa"),
+    Carta(imagem: Image("Recarga"), tipo: "Recarga"),
+    Carta(imagem: Image("Ataque"), tipo: "Ataque"),
+    Carta(imagem: Image("Recarga"), tipo: "Recarga"),
+    Carta(imagem: Image("Ataque"), tipo: "Ataque"),
+    Carta(imagem: Image("Recarga"), tipo: "Recarga")
 ]
 
 

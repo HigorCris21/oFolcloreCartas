@@ -15,7 +15,9 @@
 		EB372B082A198BFA005BE931 /* oFolcloreCartasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB372B072A198BFA005BE931 /* oFolcloreCartasUITests.swift */; };
 		EB372B0A2A198BFA005BE931 /* oFolcloreCartasUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB372B092A198BFA005BE931 /* oFolcloreCartasUITestsLaunchTests.swift */; };
 		EB372B1A2A198D80005BE931 /* CardGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB372B192A198D80005BE931 /* CardGameModel.swift */; };
-		EB372B1D2A1993E6005BE931 /* CartaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB372B1C2A1993E6005BE931 /* CartaView.swift */; };
+		EB372B1D2A1993E6005BE931 /* CartaAcimaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB372B1C2A1993E6005BE931 /* CartaAcimaView.swift */; };
+		EBEF872B2A1AAF9700B117E4 /* CartaAbaixoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEF872A2A1AAF9700B117E4 /* CartaAbaixoView.swift */; };
+		EBEF872D2A1AC9A700B117E4 /* JogoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEF872C2A1AC9A700B117E4 /* JogoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +49,9 @@
 		EB372B072A198BFA005BE931 /* oFolcloreCartasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oFolcloreCartasUITests.swift; sourceTree = "<group>"; };
 		EB372B092A198BFA005BE931 /* oFolcloreCartasUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oFolcloreCartasUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EB372B192A198D80005BE931 /* CardGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGameModel.swift; sourceTree = "<group>"; };
-		EB372B1C2A1993E6005BE931 /* CartaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartaView.swift; sourceTree = "<group>"; };
+		EB372B1C2A1993E6005BE931 /* CartaAcimaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartaAcimaView.swift; sourceTree = "<group>"; };
+		EBEF872A2A1AAF9700B117E4 /* CartaAbaixoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartaAbaixoView.swift; sourceTree = "<group>"; };
+		EBEF872C2A1AC9A700B117E4 /* JogoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,7 @@
 		EB372B182A198D70005BE931 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				EBEF872C2A1AC9A700B117E4 /* JogoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -160,7 +165,8 @@
 		EB372B1B2A1993CD005BE931 /* Componente */ = {
 			isa = PBXGroup;
 			children = (
-				EB372B1C2A1993E6005BE931 /* CartaView.swift */,
+				EB372B1C2A1993E6005BE931 /* CartaAcimaView.swift */,
+				EBEF872A2A1AAF9700B117E4 /* CartaAbaixoView.swift */,
 			);
 			path = Componente;
 			sourceTree = "<group>";
@@ -295,10 +301,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB372B1D2A1993E6005BE931 /* CartaView.swift in Sources */,
+				EBEF872B2A1AAF9700B117E4 /* CartaAbaixoView.swift in Sources */,
+				EB372B1D2A1993E6005BE931 /* CartaAcimaView.swift in Sources */,
 				EB372B1A2A198D80005BE931 /* CardGameModel.swift in Sources */,
 				EB372AEF2A198BF9005BE931 /* MainView.swift in Sources */,
 				EB372AED2A198BF9005BE931 /* oFolcloreCartasApp.swift in Sources */,
+				EBEF872D2A1AC9A700B117E4 /* JogoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
