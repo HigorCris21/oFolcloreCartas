@@ -33,7 +33,7 @@ struct Jogador: Identifiable {
 var jogadores: [Jogador] = [Jogador(), Jogador()]
 
 
-struct Carta: Identifiable {
+struct Carta: Identifiable, Equatable {
     var id = UUID()
     var imagem: Image?
     var tipo: String
