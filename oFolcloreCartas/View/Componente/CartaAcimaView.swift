@@ -6,7 +6,7 @@ struct CartaAcimaView: View {
     @Binding var cartaSelecionada: Carta?
     
     var carta: Carta
-    
+   
     var body: some View {
         Image(carta.tipo)
             .resizable()

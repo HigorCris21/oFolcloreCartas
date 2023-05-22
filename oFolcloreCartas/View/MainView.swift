@@ -47,7 +47,7 @@ struct MainView: View {
             HStack {
                 Spacer()
                 VStack (alignment: .leading) {
-                    Text("VIDA: \(jogador1.vida)")
+                    Text("VIDA: \(jogador2.vida)")
                         .font(.title)
                         .foregroundColor(.black)
                     
@@ -72,7 +72,6 @@ struct MainView: View {
                 let resultado = compararCartas(cartaJogador1: novaCartaSelecionadaJogador1, cartaJogador2: cartaSelecionadaJogador2)
                 print(resultado)
                 
-                
                 // Resetar as variáveis para permitir nova seleção de cartas
                 self.cartaSelecionadaJogador1 = nil
                 self.cartaSelecionadaJogador2 = nil
@@ -89,24 +88,55 @@ struct MainView: View {
             }
         }
     }
-}
-
-func compararCartas(cartaJogador1: Carta?, cartaJogador2: Carta?) -> String {
-    guard let cartaJogador1 = cartaJogador1, let cartaJogador2 = cartaJogador2 else {
-        return "Nenhuma carta selecionada"
-    }
     
-    switch (cartaJogador1.tipo, cartaJogador2.tipo) {
-    case ("Ataque", "Defesa"):
-        return "Jogador 1 usou ataque e venceu contra a defesa do Jogador 2"
-    case ("Defesa", "Recarga"):
-        return "Jogador 1 usou defesa e bloqueou a recarga do Jogador 2"
-    case ("Recarga", "Ataque"):
-        return "Jogador 1 usou recarga e se preparou para o ataque do Jogador 2"
-    case (cartaJogador1.tipo, cartaJogador2.tipo):
-        return "Empate"
-    default:
-        return "Jogador 2 venceu"
+    func compararCartas(cartaJogador1: Carta?, cartaJogador2: Carta?) -> String {
+        guard let cartaJogador1 = cartaJogador1, let cartaJogador2 = cartaJogador2 else {
+            return "Nenhuma carta selecionada"
+        }
+        
+        switch (cartaJogador1.tipo, cartaJogador2.tipo) {
+        case ("Ataque", "Ataque"):
+            jogador1.gastaMana()
+            jogador2.gastaMana()
+            return "Gasta Mana dos dois, Empate, reinicia o turno"
+        
+        case ("Ataque", "Defesa"):
+            jogador1.gastaMana()
+            return "Jogador1 gasta mana, Jogador2 Defende o ataque, ninguém marca"
+        
+        case ("Ataque", "Recarga"):
+            jogador1.gastaMana()
+            jogador1.ganhaPonto()
+            return "Gasta mana Jogador1, ganha ponto quem Jogador1"
+        
+        case ("Defesa", "Ataque"):
+            jogador2.gastaMana()
+            return "Gasta Mana Jogador2, Defende o Ataque, ninguém marca"
+        
+        case ("Defesa", "Defesa"):
+            return "Ninguém marca"
+        
+        case ("Defesa", "Recarga"):
+            jogador2.recarregaMana()
+            return "Recarrega a mana do jogador2"
+        
+        case ("Recarga", "Ataque"):
+            jogador2.gastaMana()
+            jogador2.ganhaPonto()
+            return "Jogador2 gasta mana e ganha ponto"
+        
+        case("Recarga", "Defesa"):
+            jogador1.recarregaMana()
+            return "Recarrega Mana do jogador1"
+        
+        case("Recarga", "Recarga"):
+            jogador1.recarregaMana()
+            jogador2.recarregaMana()
+            return "Os dois recarregam a Mana"
+        
+        default:
+            return "Erro"
+        }
     }
 }
 

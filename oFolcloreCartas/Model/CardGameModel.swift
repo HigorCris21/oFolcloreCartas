@@ -15,8 +15,24 @@ struct Jogador: Identifiable {
     var mana: Int = 1
     var vida: Int = 3
     
+    //Ao usar inout, o parâmetro é passado por referência, o que significa que a função tem acesso direto ao argumento original e pode modificar seu valor.
+    mutating func recarregaMana() {
+           mana += 1
+       }
+       
+       mutating func gastaMana() {
+           mana -= 1
+       }
+       
+       mutating func perdePonto() {
+           vida -= 1
+       }
+       
+       mutating func ganhaPonto() {
+          vida += 1
+       }
     
-    //Distribui as cartas e verifica se existe as  3 cartas são somente Ataque ou somente Recarga
+    //Distribui as cartas e verifica se existe as  3 cartas sasomente Ataque ou somente Recarga
     init() {
         self.cartas = Baralho().baralho.prefix(3).map { $0 }
         
@@ -33,7 +49,7 @@ struct Jogador: Identifiable {
 var jogadores: [Jogador] = [Jogador(), Jogador()]
 
 
-struct Carta: Identifiable, Equatable {
+struct Carta: Identifiable, Equatable{
     var id = UUID()
     var imagem: Image?
     var tipo: String
