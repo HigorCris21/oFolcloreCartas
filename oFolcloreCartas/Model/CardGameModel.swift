@@ -24,7 +24,7 @@ struct Jogador: Identifiable {
            mana -= 1
        }
        
-       mutating func perdePonto() {
+       mutating func perdeVida() {
            vida -= 1
        }
        

@@ -106,7 +106,7 @@ struct MainView: View {
         
         case ("Ataque", "Recarga"):
             jogador1.gastaMana()
-            jogador1.ganhaPonto()
+            jogador2.perdeVida()
             return "Gasta mana Jogador1, ganha ponto quem Jogador1"
         
         case ("Defesa", "Ataque"):
@@ -122,7 +122,7 @@ struct MainView: View {
         
         case ("Recarga", "Ataque"):
             jogador2.gastaMana()
-            jogador2.ganhaPonto()
+            jogador1.perdeVida()
             return "Jogador2 gasta mana e ganha ponto"
         
         case("Recarga", "Defesa"):
