@@ -7,6 +7,8 @@ struct MainView: View {
     @State private var cartaSelecionadaJogador1: Carta?
     @State private var cartaSelecionadaJogador2: Carta?
     
+    
+    
     var body: some View {
         let gridLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
         
@@ -72,9 +74,12 @@ struct MainView: View {
                 let resultado = compararCartas(cartaJogador1: novaCartaSelecionadaJogador1, cartaJogador2: cartaSelecionadaJogador2)
                 print(resultado)
                 
+                
+                
                 // Resetar as variáveis para permitir nova seleção de cartas
                 self.cartaSelecionadaJogador1 = nil
                 self.cartaSelecionadaJogador2 = nil
+                
             }
         }
         .onChange(of: cartaSelecionadaJogador2) { novaCartaSelecionadaJogador2 in
@@ -85,6 +90,7 @@ struct MainView: View {
                 // Resetar as variáveis para permitir nova seleção de cartas
                 self.cartaSelecionadaJogador1 = nil
                 self.cartaSelecionadaJogador2 = nil
+                
             }
         }
     }
@@ -99,46 +105,47 @@ struct MainView: View {
             jogador1.gastaMana()
             jogador2.gastaMana()
             return "Gasta Mana dos dois, Empate, reinicia o turno"
-        
+            
         case ("Ataque", "Defesa"):
             jogador1.gastaMana()
             return "Jogador1 gasta mana, Jogador2 Defende o ataque, ninguém marca"
-        
+            
         case ("Ataque", "Recarga"):
             jogador1.gastaMana()
-            jogador2.perdeVida()
+            jogador2.perdeRound()
             return "Gasta mana Jogador1, ganha ponto quem Jogador1"
-        
+            
         case ("Defesa", "Ataque"):
             jogador2.gastaMana()
             return "Gasta Mana Jogador2, Defende o Ataque, ninguém marca"
-        
+            
         case ("Defesa", "Defesa"):
             return "Ninguém marca"
-        
+            
         case ("Defesa", "Recarga"):
             jogador2.recarregaMana()
             return "Recarrega a mana do jogador2"
-        
+            
         case ("Recarga", "Ataque"):
             jogador2.gastaMana()
-            jogador1.perdeVida()
+            jogador1.perdeRound()
             return "Jogador2 gasta mana e ganha ponto"
-        
+            
         case("Recarga", "Defesa"):
             jogador1.recarregaMana()
             return "Recarrega Mana do jogador1"
-        
+            
         case("Recarga", "Recarga"):
             jogador1.recarregaMana()
             jogador2.recarregaMana()
             return "Os dois recarregam a Mana"
-        
+            
         default:
             return "Erro"
         }
     }
 }
+    
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

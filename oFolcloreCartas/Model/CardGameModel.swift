@@ -24,11 +24,11 @@ struct Jogador: Identifiable {
            mana -= 1
        }
        
-       mutating func perdeVida() {
+       mutating func perdeRound() {
            vida -= 1
        }
        
-       mutating func ganhaPonto() {
+       mutating func ganhaRound() {
           vida += 1
        }
     
